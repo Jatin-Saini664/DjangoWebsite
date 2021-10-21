@@ -124,3 +124,9 @@ STATIC_URL = '/static/'
 
 # to tell crispy form not to use bootstrap 2 whhich is default but use bootstrap4
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+LOGIN_REDIRECT_URL = 'shop-home'
+LOGIN_URL = 'user-login'
+
+
