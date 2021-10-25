@@ -28,7 +28,8 @@ def home(request):
 def about(request):
     return render(request,'shop/about.html')
 
-
+def default(request):
+    return render(request, 'shop/default.html')
 
 
 

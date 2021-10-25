@@ -121,11 +121,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# where our static like js and css file lie
+
+# So that profile uploded dont get in base directory 
+# BASR_DIR is created by django to get path of base directory
+# where our uploaded file will reside on the file system 
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+
+# how we will access it in the browser 
+MEDIA_URL = '/media/'
+
+
 
 # to tell crispy form not to use bootstrap 2 whhich is default but use bootstrap4
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
+# so that it dont look for path in account or other folder and dont throw error 
 LOGIN_REDIRECT_URL = 'shop-home'
 LOGIN_URL = 'user-login'
 
