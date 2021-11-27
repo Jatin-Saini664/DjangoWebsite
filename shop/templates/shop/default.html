@@ -18,7 +18,7 @@
 	<header>
 		<!-- <div class="shadow p-2 mb-5 bg-light rounded"> -->
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar-brand" href="#">Shopping Webapp</a>
+				<a class="navbar-brand" href="{% url 'default' %}">Shopping Webapp</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -26,13 +26,13 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="{% url 'shop-home' %}">Home <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
+					<li class="nav-item active">
+					<a class="nav-link" href="{% url 'user-register' %}">Register</a>
 					</li>
-					<li class="nav-item">
-					<a class="nav-link disabled" href="#">Disabled</a>
+					<li class="nav-item active">
+					<a class="nav-link " href="{% url 'user-login' %}">Login</a>
 					</li>
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
@@ -46,25 +46,24 @@
 	<main>
 		<section class="jumbotron text-center bg-light ">
 			<div class="container">
-			  <h1 class="jumbotron-heading">Album example</h1>
-			  <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+			  <h1 class="jumbotron-heading">Shoppping And Reminder Website</h1>
+			  <p class="lead text-muted">This is our minor project of shopping and reminder website , using this user can serach shops in their city and shopkeepers can upload information about their shop</p>
 			  <p>
-				<a href="#" class="btn btn-primary my-2">Main call to action</a>
-				<a href="#" class="btn btn-secondary my-2">Secondary action</a>
+				<a href="#" class="btn btn-primary my-2">Are you a User</a>
+				<a href="#" class="btn btn-secondary my-2">Are you a shop keeper</a>
 			  </p>
 			</div>
 		  </section>
 		<div class="d-flex align-items-center mb-5 container-fluid ">
-			<div class="col-sm-4 mx-auto">
+			<div class="col-sm-4 mx-auto ">
 				<div class="card shadow">
 					<img class="card-img-top"  src="media/card1.jpg" alt="Card image cap" >
 					<div class="card-body">
-					<h4 class="card-title">Card title</h4>
+					<h4 class="card-title">All Shops</h4>
 					<p class="card-text">
-						Some quick example text to build on the card title
-						and make up the bulk of the card's content.
+						Any user can view all shops registered in that area 
 					</p>
-					<a href="#!" class="btn btn-primary">Go somewhere</a>
+					<a href="#!" class="btn btn-primary">Visit Website</a>
 					</div>
 				</div>
 			</div>
@@ -72,12 +71,11 @@
 				<div class="card shadow">
 					<img class="card-img-top"  src="media/card2.jpg" alt="Card image cap" >
 					<div class="card-body">
-					<h4 class="card-title">Card title</h4>
+					<h4 class="card-title">Items In Shop</h4>
 					<p class="card-text">
-						Some quick example text to build on the card title
-						and make up the bulk of the card's content.
+						Users can also view all items that are present in the shop and added by shopkeeper
 					</p>
-					<a href="#!" class="btn btn-primary">Go somewhere</a>
+					<a href="#!" class="btn btn-primary">Visit Website</a>
 					</div>
 				</div>
 			</div>
@@ -85,12 +83,11 @@
 				<div class="card shadow">
 					<img class="card-img-top"  src="media/card4.png" alt="Card image cap" >
 					<div class="card-body">
-					<h4 class="card-title">Card title</h4>
+					<h4 class="card-title">Variety Of Shops</h4>
 					<p class="card-text">
-						Some quick example text to build on the card title
-						and make up the bulk of the card's content.
+						Any shop can register and mention their goods with their price there is no restriction
 					</p>
-					<a href="#!" class="btn btn-primary">Go somewhere</a>
+					<a href="#!" class="btn btn-primary">Visit Website</a>
 					</div>
 				</div>
 			</div>
@@ -102,12 +99,11 @@
 				<div class="card shadow">
 					<img class="card-img-top"  src="media/card15.jpg" alt="Card image cap" >
 					<div class="card-body">
-					<h4 class="card-title">Card title</h4>
+					<h4 class="card-title">Online Website</h4>
 					<p class="card-text">
-						Some quick example text to build on the card title
-						and make up the bulk of the card's content.
+						Using our website any user or shopokeeper can post thier goods or buy their good
 					</p>
-					<a href="#!" class="btn btn-primary">Go somewhere</a>
+					<a href="#!" class="btn btn-primary">Visit Website</a>
 					</div>
 				</div>
 			</div>
@@ -115,12 +111,11 @@
 				<div class="card shadow">
 					<img class="card-img-top"  src="media/card18.jpg" alt="Card image cap" >
 					<div class="card-body">
-					<h4 class="card-title">Card title</h4>
+					<h4 class="card-title">Reminder Notifiations</h4>
 					<p class="card-text">
-						Some quick example text to build on the card title
-						and make up the bulk of the card's content.
+						Users can get reminder notifications when they purchase goods from shops and don't pay
 					</p>
-					<a href="#!" class="btn btn-primary">Go somewhere</a>
+					<a href="#!" class="btn btn-primary">Visit Website</a>
 					</div>
 				</div>
 			</div>
@@ -128,12 +123,11 @@
 				<div class="card shadow">
 					<img class="card-img-top"  src="media/card13.jpg" alt="Card image cap" >
 					<div class="card-body">
-					<h4 class="card-title">Card title</h4>
+					<h4 class="card-title">App Support</h4>
 					<p class="card-text">
-						Some quick example text to build on the card title
-						and make up the bulk of the card's content.
+						Not only using website but users and shopkeeper can also access same functionality with our app
 					</p>
-					<a href="#!" class="btn btn-primary">Go somewhere</a>
+					<a href="#!" class="btn btn-primary">Visit Website</a>
 					</div>
 				</div>
 			</div>
@@ -143,40 +137,37 @@
 		<div class="d-flex align-items-center mb-5 container-fluid ">
 			<div class="col-sm-4 mx-auto">
 				<div class="card shadow">
-					<img class="card-img-top"  src="media/card17.jpg" alt="Card image cap" >
+					<img class="card-img-top"  src="media/card14.jpg" alt="Card image cap" >
 					<div class="card-body">
-					<h4 class="card-title">Card title</h4>
+					<h4 class="card-title">Friendly Interaction</h4>
 					<p class="card-text">
-						Some quick example text to build on the card title
-						and make up the bulk of the card's content.
+						Users and shopkeepers now can interact each other with one click.
 					</p>
-					<a href="#!" class="btn btn-primary">Go somewhere</a>
+					<a href="#!" class="btn btn-primary">Visit Website</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-4 mx-auto">
 				<div class="card shadow">
-					<img class="card-img-top"  src="media/card19.jpg" alt="Card image cap" >
+					<img class="card-img-top"  src="media/card17.jpg" alt="Card image cap" >
 					<div class="card-body">
-					<h4 class="card-title">Card title</h4>
+					<h4 class="card-title">Previous Purchases</h4>
 					<p class="card-text">
-						Some quick example text to build on the card title
-						and make up the bulk of the card's content.
+						users and shopkeepers can log their details so that they can view trasactions even after
 					</p>
-					<a href="#!" class="btn btn-primary">Go somewhere</a>
+					<a href="#!" class="btn btn-primary">Visit Website</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-4 mx-auto ">
 				<div class="card shadow">
-					<img class="card-img-top"  src="media/card14.jpg" alt="Card image cap" >
+					<img class="card-img-top"  src="media/card19.jpg" alt="Card image cap" >
 					<div class="card-body">
-					<h4 class="card-title">Card title</h4>
+					<h4 class="card-title">Personalised Reminder</h4>
 					<p class="card-text">
-						Some quick example text to build on the card title
-						and make up the bulk of the card's content.
+						shopkeepers can remind thier users to pay with ease and one click
 					</p>
-					<a href="#!" class="btn btn-primary">Go somewhere</a>
+					<a href="#!" class="btn btn-primary">Visit Website</a>
 					</div>
 				</div>
 			</div>

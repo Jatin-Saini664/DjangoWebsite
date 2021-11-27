@@ -1,7 +1,12 @@
 {% extends 'shop/base.html' %}
+{%load static%}
+{%block link%}
+<link rel="stylesheet" href=" {% static 'main.css'%}">
+{%endblock link%}
 {% block content %}
     {% for shop in shop_details%}
         <article class="media content-section">
+            <img class="rounded-circle article-img " src="{{ shop.owner.profile.image.url}}">
             <div class="media-body">
                 <div class="article-metadata">
                     <a class="mr-2" href="#">{{ shop.owner}}</a>
@@ -41,7 +46,7 @@
 
 
 {% comment %} 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     {% if  title%}
@@ -60,6 +65,6 @@
    <p>{{ shop.date_posted}}</p>
     {% endfor %}
 </body>
-</html> 
+</html>  -->
 
 {% endcomment %}
