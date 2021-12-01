@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import ShopDetails
+from django.views.generic import ListView ,DetailView
 # Create your views here.
 detail=[
     {
@@ -31,6 +32,23 @@ def about(request):
 def default(request):
     return render(request, 'shop/default.html')
 
+class PostListView (ListView):
+    model = ShopDetails
+
+    # this will look for an template of following pattern
+    # <app>/<model>_<viewtype.html>.html
+    # but we can change it using template_name 
+    template_name = "shop/home.html"
+
+    # now we were looping on context variable of name posts but here it is called
+    # objectlist instead of post
+    # we change this 
+    context_object_name = "shop_details"
+    
+    # To see latest once at the top
+    ordering = ['date_posted']
+    #  ordering = ['-date_posted'] for doing opposite
 
 
-
+class PostDetailView (DetailView):
+    model = ShopDetails

@@ -13,7 +13,7 @@
                     <small class="text-muted">{{ shop.date_posted | date:"F d , Y"}}</small>
                 </div>
                 <h2>
-                <a class="article-title" href="#">{{ shop.title}}</a></h2>
+                <a class="article-title" href="{% url 'shop-detail' shop.id %}">{{ shop.title}}</a></h2>
                 <p class="article-content">{{ shop.content }}</p>
             </div>
         </article>
