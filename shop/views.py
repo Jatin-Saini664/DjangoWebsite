@@ -1,7 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import ShopDetails
-from django.views.generic import ListView ,DetailView
+from django.views.generic import (
+    ListView, 
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
+# we can not use login decorator in class so we use mixin
+
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # Create your views here.
 detail=[
     {
@@ -32,7 +41,7 @@ def about(request):
 def default(request):
     return render(request, 'shop/default.html')
 
-class PostListView (ListView):
+class ShopListView (ListView):
     model = ShopDetails
 
     # this will look for an template of following pattern
@@ -50,5 +59,46 @@ class PostListView (ListView):
     #  ordering = ['-date_posted'] for doing opposite
 
 
-class PostDetailView (DetailView):
+class ShopDetailView (DetailView):
     model = ShopDetails
+
+class ShopCreateView (LoginRequiredMixin, CreateView):
+    model = ShopDetails
+    # date will be created automatically
+    
+    # fileds we want to see in form
+    fields = ['title','content']
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+
+        
+
+    # this will share view with update view template
+
+class ShopUpdateView (LoginRequiredMixin,UserPassesTestMixin , UpdateView):
+    model = ShopDetails
+    # date will be created automatically
+    
+    # fileds we want to see in form
+    fields = ['title','content']
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+    
+    def test_func(self):
+        shop = self.get_object()
+        if shop.owner == self.request.user:
+            return True
+        return False
+
+
+class ShopDeleteView (LoginRequiredMixin,UserPassesTestMixin ,DeleteView):
+    model = ShopDetails
+    success_url = '/shop'
+    def test_func(self):
+        shop = self.get_object()
+        if shop.owner == self.request.user:
+            return True
+        return False
