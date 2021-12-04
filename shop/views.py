@@ -97,6 +97,7 @@ class ShopUpdateView (LoginRequiredMixin,UserPassesTestMixin , UpdateView):
 class ShopDeleteView (LoginRequiredMixin,UserPassesTestMixin ,DeleteView):
     model = ShopDetails
     success_url = '/shop'
+    # where to redirect because sjango doesnot know where to redirect after successful deletion so we provide url
     def test_func(self):
         shop = self.get_object()
         if shop.owner == self.request.user:
